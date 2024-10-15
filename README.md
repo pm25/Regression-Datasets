@@ -10,18 +10,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <!-- <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
-
 <h1 align="center">🎛️ Regression Datasets</h1>
-  <p align="left">
-    This repository contains a collection of various regression datasets. I have unified their metadata format to make them easier to read and process. It follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure and includes code that allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
-  </p>
-</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -34,6 +23,10 @@
     <li><a href="#5-acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+This repository contains a collection of various regression datasets. I have unified their metadata format to make them easier to read and process. Additionally, I have included code that follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, which allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## 1. Usage
