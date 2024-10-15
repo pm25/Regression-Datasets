@@ -15,7 +15,7 @@ class UTKFACE:
             downloaded again. Default is False.
     """
 
-    _URL = "https://archive.org/download/UTKFace/UTKFace.tar.gz"
+    _URL = "https://huggingface.co/datasets/py97/UTKFace-Cropped/resolve/main/UTKFace.tar.gz"
     _MD5 = "ae1a16905fbd795db921ff1d940df9cc"
 
     def __init__(
@@ -60,7 +60,7 @@ class UTKFACE:
         meta_df = raw_meta_df[["rel_path", "age"]].rename(columns={"rel_path": "file_name", "age": "label"})
 
         meta_df.file_name = meta_df.file_name.apply(lambda x: Path(x).name)
-        meta_df = meta_df.sort_values(by=['file_name'])
+        meta_df = meta_df.sort_values(by=["file_name"])
         meta_df.label = meta_df.label.astype(float)
         train_df = meta_df.sample(frac=0.8, random_state=222)
         test_df = meta_df.drop(train_df.index)
