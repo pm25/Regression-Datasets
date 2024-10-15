@@ -1,4 +1,5 @@
-# modify from: https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
+# Code in this file is adapted from pytorch/pytorch
+# https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
 import pandas as pd
 from pathlib import Path
@@ -7,7 +8,7 @@ from torchvision.datasets.utils import download_and_extract_archive
 
 
 class UTKFACE:
-    """`The UTKFace Data Set <https://susanqq.github.io/UTKFace/>`_.
+    """`The UTKFace Data Set <https://susanqq.github.io/UTKFace/>`
     Args:
         root (string): Root directory of the dataset.
         download (bool, optional): If True, downloads the dataset from the internet and

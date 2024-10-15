@@ -7,7 +7,7 @@ from torchvision.datasets.utils import download_url
 
 
 class AMAZON_REVIEW:
-    """`Amazon Review Dataset`.
+    """`Amazon Review Dataset`
     Args:
         root (string): Root directory of the dataset.
         download (bool, optional): If True, downloads the dataset from the internet and

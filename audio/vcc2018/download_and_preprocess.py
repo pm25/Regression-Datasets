@@ -1,4 +1,5 @@
-# modify from: https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
+# Code in this file is adapted from pytorch/pytorch
+# https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
 import io
 import pandas as pd
@@ -8,7 +9,7 @@ from torchvision.datasets.utils import download_and_extract_archive
 
 
 class VCC2018:
-    """`The VCC2018 Data Set <https://datashare.ed.ac.uk/handle/10283/3061><https://datashare.ed.ac.uk/handle/10283/3257>`_.
+    """`The VCC2018 Data Set <https://datashare.ed.ac.uk/handle/10283/3061>`
     Args:
         root (string): Root directory of the dataset.
         download (bool, optional): If True, downloads the dataset from the internet and

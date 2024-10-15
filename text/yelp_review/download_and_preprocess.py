@@ -7,7 +7,7 @@ from torchvision.datasets.utils import download_url
 
 
 class YELP_REVIEW:
-    """`The Yelp Review Dataset`.
+    """`The Yelp Review Dataset`
     Args:
         root (string): Root directory of the dataset.
         download (bool, optional): If True, downloads the dataset from the internet and
