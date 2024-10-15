@@ -1,3 +1,5 @@
+# Copyright (c) 2024 Pin-Yen Huang.
+# Licensed under the MIT License.
 # Code in this file is adapted from pytorch/pytorch
 # https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
@@ -126,4 +128,4 @@ class BVCC:
 
 
 if __name__ == "__main__":
-    BVCC("./audio", download=True)
+    BVCC("./data", download=True)

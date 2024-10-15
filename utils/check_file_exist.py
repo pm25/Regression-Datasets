@@ -1,9 +1,13 @@
+# Copyright (c) 2024 Pin-Yen Huang.
+# Licensed under the MIT License.
+
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
 
+
 if __name__ == "__main__":
-    dataset_dir = Path("./vision/koniq10k")
+    dataset_dir = Path("./data/utkface")
 
     train_df = pd.read_csv(dataset_dir / "meta" / "train.csv")
     for data_rel_path in tqdm(train_df.rel_path.tolist()):
