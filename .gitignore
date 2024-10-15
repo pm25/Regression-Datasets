@@ -166,7 +166,8 @@ cython_debug/
 !.gitignore
 !utils/*
 !*/
+!*/*.py
 !*/*/meta/*
 !*/*/meta.zip
-!*/*/download_and_preprocess.py
+!*/*/process_meta.py
 !*/*/apply_aug.py

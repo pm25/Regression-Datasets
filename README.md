@@ -28,15 +28,21 @@ This repository contains a collection of various regression datasets. I have uni
 
 
 
-<!-- ABOUT THE PROJECT -->
+<!-- USAGE -->
 ## 1. Usage
 
-Each dataset folder includes two key files: a `[dataset].py` file and a `metadata.py` file. You can simply copy the `[dataset].py` file into your project to load the dataset. When you run this file, it will automatically handle the downloading of data and metadata, so there's no need to copy the `metadata.py` file separately.
+This repository contains datasets for **Vision**, **Audio**, and **Text**. The corresponding files are located in the following folders: 
+
+- [./vision](./vision)
+- [./audio](./audio)
+- [./text](./text)
+
+Each folder contains multiple `[dataset].py` files. You can directly import these files to automatically download and load the datasets. Alternatively, you can copy the desired `[dataset].py` file into your project to load the dataset locally.
 
 ### 📸 Example Usage of Vision Datasets
 
 ```python
-from utkface import UTKFace
+from vision.utkface import UTKFace
 
 utkface_trainset = UTKFace(root="./data", split="train", download=True)
 
@@ -47,7 +53,7 @@ for x, y in utkface_trainset:
 ### 🎧 Example Usage of Audio Datasets
 
 ```python
-from vcc2018 import VCC2018
+from audio.vcc2018 import VCC2018
 
 vcc2018_trainset = VCC2018(root="./data", split="train", download=True)
 
@@ -58,7 +64,7 @@ for x, y in vcc2018_trainset:
 ### 📝 Example Usage of Text Datasets
 
 ```python
-from amazon_review import Amazon_Review
+from text.amazon_review import Amazon_Review
 
 amazon_review_trainset = Amazon_Review(root="./data", split="train", download=True)
 
@@ -73,7 +79,7 @@ for x, y in amazon_review_trainset:
 
 ## 2. Datasets
 
-This repository contains datasets for Vision, Audio, and Text. For datasets that do not provide a predefined train-test split, I randomly sample 80% of the data for training and reserve the remaining 20% for testing. Details for each dataset are provided below.
+For datasets that do not provide a predefined train-test split, I randomly sample 80% of the data for training and reserve the remaining 20% for testing. Details for each dataset are provided below.
 
 ### 📸 Vision
 
