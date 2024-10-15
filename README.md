@@ -26,16 +26,15 @@
 
 This repository contains a collection of various regression datasets. I have unified their metadata format to make them easier to read and process. Additionally, I have included code that follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, which allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
 
-
-
 <!-- USAGE -->
+
 ## 1. Usage
 
-This repository contains datasets for **Vision**, **Audio**, and **Text**. The corresponding files are located in the following folders: 
+This repository contains datasets for **Vision**, **Audio**, and **Text**. The corresponding files are located in the following folders:
 
-- [./vision](./vision)
-- [./audio](./audio)
-- [./text](./text)
+-   [./vision](./vision)
+-   [./audio](./audio)
+-   [./text](./text)
 
 Each folder contains multiple `[dataset].py` files. You can directly import these files to automatically download and load the datasets. Alternatively, you can copy the desired `[dataset].py` file into your project to load the dataset locally.
 
@@ -84,22 +83,22 @@ For datasets that do not provide a predefined train-test split, I randomly sampl
 ### 📸 Vision
 
 | Dataset | # Training Data | # Dev Data | # Test Data | Target Range |
-| ------- | --------------- | ---------- | ------------ | ------------- |
-| UTKFace | 18,964         | -          | 4,741        | [1, 116]      |
+| ------- | --------------- | ---------- | ----------- | ------------ |
+| UTKFace | 18,964          | -          | 4,741       | [1, 116]     |
 
 ### 🎧 Audio
 
-| Dataset   | # Training Data | # Dev Data | # Test Data | Target Range |
-| --------- | --------------- | ---------- | ------------ | ------------- |
-| BVCC      | 4,974           | 1,066      | 1,066        | [1, 5]       |
-| VCC2018   | 16,464          | -          | 4,116        | [1, 5]       |
+| Dataset | # Training Data | # Dev Data | # Test Data | Target Range |
+| ------- | --------------- | ---------- | ----------- | ------------ |
+| BVCC    | 4,974           | 1,066      | 1,066       | [1, 5]       |
+| VCC2018 | 16,464          | -          | 4,116       | [1, 5]       |
 
 ### 📝 Text
 
-| Dataset         | # Training Data | # Dev Data | # Test Data | Target Range |
-| --------------- | --------------- | ---------- | ------------ | ------------- |
-| Amazon Review   | 250,000         | 25,000     | 130,000      | [1, 5]       |
-| Yelp Review     | 250,000         | 25,000     | 50,000       | [1, 5]       |
+| Dataset       | # Training Data | # Dev Data | # Test Data | Target Range |
+| ------------- | --------------- | ---------- | ----------- | ------------ |
+| Amazon Review | 250,000         | 25,000     | 650,000     | [0, 4]       |
+| Yelp Review   | 250,000         | 25,000     | 50,000      | [0, 4]       |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

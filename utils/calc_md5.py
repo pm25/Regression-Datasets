@@ -1,7 +1,7 @@
 from pathlib import Path
 from torchvision.datasets.utils import calculate_md5
 
-dataset_dir = "./vision/imdb_wiki"
+dataset_dir = "./data/yelp_review"
 data_exts = [".tar", ".gz", ".zip"]
 
 for path in Path(dataset_dir).glob("*"):
