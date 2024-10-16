@@ -24,7 +24,7 @@
   </ol>
 </details>
 
-This repository contains a collection of various regression datasets. I have unified their metadata format to make them easier to read and process. Additionally, I have included code that follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, which allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
+This repository contains a collection of various regression datasets. I have unified their data format to make them easier to read and process. Additionally, I have included code that follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, which allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
 
 <!-- USAGE -->
 
