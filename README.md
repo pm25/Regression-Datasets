@@ -45,7 +45,7 @@ from vision.utkface import UTKFace
 
 utkface_trainset = UTKFace(root="./data", split="train", download=True)
 
-for x, y in utkface_trainset:
+for image, label in utkface_trainset:
     ...
 ```
 
@@ -56,7 +56,7 @@ from audio.vcc2018 import VCC2018
 
 vcc2018_trainset = VCC2018(root="./data", split="train", download=True)
 
-for x, y in vcc2018_trainset:
+for audio, sample_rate, label in vcc2018_trainset:
     ...
 ```
 
@@ -67,8 +67,8 @@ from text.amazon_review import Amazon_Review
 
 amazon_review_trainset = Amazon_Review(root="./data", split="train", download=True)
 
-for x, y in amazon_review_trainset:
-    (ori, aug_0, aug_1) = x
+for texts, label in amazon_review_trainset:
+    (ori, aug_0, aug_1) = texts
     ...
 ```
 
