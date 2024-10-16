@@ -55,6 +55,8 @@ class BVCC:
     def _download(self) -> None:
         if self._check_exists():
             return
+        for path in self._base_folder.glob("**/*"):
+            os.chmod(path, 0o755)
         download_and_extract_archive(self._BVCC_URL[0], download_root=self._base_folder, md5=self._BVCC_URL[1])
         for url, md5 in self._BC_URL:
             download_and_extract_archive(url, download_root=self._base_folder, md5=md5)
