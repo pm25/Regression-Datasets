@@ -16,32 +16,39 @@
 <details>
   <summary><strong>📋 Table of Contents</strong></summary>
   <ol>
-    <li><a href="#1-usage">Usage</a></li>
-    <li><a href="#2-datasets">Datasets</a></li>
-    <li><a href="#3-license">License</a></li>
-    <li><a href="#4-contact">Contact</a></li>
-    <li><a href="#5-acknowledgments">Acknowledgments</a></li>
+    <li><a href="#1-installation">Installation</a></li>
+    <li><a href="#2-usage">Usage</a></li>
+    <li><a href="#3-datasets">Datasets</a></li>
+    <li><a href="#4-license">License</a></li>
+    <li><a href="#5-contact">Contact</a></li>
+    <li><a href="#6-acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-This repository contains a collection of various regression datasets. I have unified their data format to make them easier to read and process. Additionally, I have included code that follows the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, which allows users to automatically download and load the datasets. All datasets come with a permissive license, permitting their use for research purposes.
+This repository offers a diverse collection of regression datasets across vision, audio and text domains. It provides dataset classes that follow the <a href="https://github.com/pytorch/vision/tree/main/torchvision/datasets">PyTorch Datasets</a> structure, allowing users to automatically download and load these datasets with ease. All datasets come with a permissive license, permitting their use for research purposes.
+
+<!-- Installation -->
+
+## 1. Installation
+
+To install the `regsets` package, you can use pip:
+
+```sh
+python -m pip install regsets
+```
+
+Alternatively, you can download a specific dataset file (e.g., `utkface.py`) and include it in your project to load the dataset locally.
 
 <!-- USAGE -->
 
-## 1. Usage
+## 2. Usage
 
-This repository contains datasets for **Vision**, **Audio**, and **Text**. The corresponding files are located in the following folders:
+Below are examples of how to use the `regsets` package for loading datasets.
 
--   [./vision](./vision)
--   [./audio](./audio)
--   [./text](./text)
-
-Each folder contains multiple `[dataset].py` files. You can directly import these files to automatically download and load the datasets. Alternatively, you can copy the desired `[dataset].py` file into your project to load the dataset locally.
-
-### 📸 Example Usage of Vision Datasets
+### 📸 Vision Datasets
 
 ```python
-from vision.utkface import UTKFace
+from regsets.vision import UTKFace
 
 utkface_trainset = UTKFace(root="./data", split="train", download=True)
 
@@ -49,10 +56,10 @@ for image, label in utkface_trainset:
     ...
 ```
 
-### 🎧 Example Usage of Audio Datasets
+### 🎧 Audio Datasets
 
 ```python
-from audio.vcc2018 import VCC2018
+from regsets.audio import VCC2018
 
 vcc2018_trainset = VCC2018(root="./data", split="train", download=True)
 
@@ -60,10 +67,10 @@ for audio, sample_rate, label in vcc2018_trainset:
     ...
 ```
 
-### 📝 Example Usage of Text Datasets
+### 📝 Text Datasets
 
 ```python
-from text.amazon_review import Amazon_Review
+from regsets.text import Amazon_Review
 
 amazon_review_trainset = Amazon_Review(root="./data", split="train", download=True)
 
@@ -76,24 +83,24 @@ for texts, label in amazon_review_trainset:
 
 <!-- DATASETS -->
 
-## 2. Datasets
+## 3. Datasets
 
 For datasets that do not provide a predefined train-test split, I randomly sample 80% of the data for training and reserve the remaining 20% for testing. Details for each dataset are provided below.
 
-### 📸 Vision
+### 📸 Vision Datasets
 
 | Dataset | # Training Data | # Dev Data | # Test Data | Target Range |
 | ------- | --------------- | ---------- | ----------- | ------------ |
 | UTKFace | 18,964          | -          | 4,741       | [1, 116]     |
 
-### 🎧 Audio
+### 🎧 Audio Datasets
 
 | Dataset | # Training Data | # Dev Data | # Test Data | Target Range |
 | ------- | --------------- | ---------- | ----------- | ------------ |
 | BVCC    | 4,974           | 1,066      | 1,066       | [1, 5]       |
 | VCC2018 | 16,464          | -          | 4,116       | [1, 5]       |
 
-### 📝 Text
+### 📝 Text Datasets
 
 | Dataset       | # Training Data | # Dev Data | # Test Data | Target Range |
 | ------------- | --------------- | ---------- | ----------- | ------------ |
@@ -104,7 +111,7 @@ For datasets that do not provide a predefined train-test split, I randomly sampl
 
 <!-- LICENSE -->
 
-## 3. License
+## 4. License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
@@ -112,7 +119,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 <!-- CONTACT -->
 
-## 4. Contact
+## 5. Contact
 
 -   Pin-Yen Huang (pyhuang97@gmail.com)
 
@@ -120,7 +127,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 
-## 5. Acknowledgments
+## 6. Acknowledgments
 
 -   [PyTorch](https://github.com/pytorch)
 -   [UTKFace](https://susanqq.github.io/UTKFace)

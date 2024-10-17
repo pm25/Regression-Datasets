@@ -7,11 +7,11 @@ packages = ["regsets"]
 
 [project]
 name = "regsets"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="Pin-Yen Huang", email="pyhuang97@gmail.com" },
 ]
-description = "A collection of regression datasets, featuring PyTorch-like dataset classes."
+description = "A collection of regression datasets with PyTorch-like dataset classes."
 keywords = ["regression", "dataset", "pytorch"]
 readme = "README.md"
 requires-python = ">=3.7"
