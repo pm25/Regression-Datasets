@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["regsets"]
+
+[project]
+name = "regsets"
+version = "0.1.1"
+authors = [
+  { name="Pin-Yen Huang", email="pyhuang97@gmail.com" },
+]
+description = "A collection of regression datasets, featuring PyTorch-like dataset classes."
+keywords = ["regression", "dataset", "pytorch"]
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "librosa>=0.10.1",
+  "numpy>=1.24.4",
+  "pandas>=2.0.3",
+  "Pillow>=9.0.0",
+  "torch>=1.12.0",
+  "torchvision>=0.13.0",
+  "tqdm"
+]
+
+[project.urls]
+Homepage = "https://github.com/pm25/regression-datasets"
+Repository = "https://github.com/pm25/regression-datasets.git"
+Issues = "https://github.com/pm25/regression-datasets/issues"

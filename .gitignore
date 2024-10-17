@@ -164,11 +164,11 @@ cython_debug/
 *
 !README.md
 !requirements.txt
+!pyproject.toml
 !.gitignore
 !utils/*
-!*/
-!*/*.py
-!*/*/meta/*
-!*/*/meta.zip
-!*/*/process_meta.py
-!*/*/apply_aug.py
+!regsets/*/*.py
+!data/*/meta/*
+!data/*/meta.zip
+!data/*/process_meta.py
+!data/*/apply_aug.py
