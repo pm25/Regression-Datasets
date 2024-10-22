@@ -18,7 +18,7 @@ class UTKFace(VisionDataset):
     """`The UTKFace Data Set <https://susanqq.github.io/UTKFace/>`
 
     The UTKFace dataset is an image age estimation dataset, where the goal is to predict the age of the person in an image.
-    The labels range from 1 to 116 years old. The dataset comprises over 20,000 face images, which we split into 18,964
+    The labels range from 1 to 116 years old. The dataset consists of 23,705 face images, which we split into 18,964
     training samples and 4,741 test samples. The dataset is available in two versions: the original images and an aligned
     and cropped version. We use the aligned and cropped version of the UTKFace dataset here.
 
