@@ -1,6 +1,3 @@
-# Copyright (c) 2024 Pin-Yen Huang.
-# Licensed under the MIT License.
-
 import numpy as np
 import pandas as pd
 from PIL import Image

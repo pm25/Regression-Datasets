@@ -1,5 +1,3 @@
-# Copyright (c) 2024 Pin-Yen Huang.
-# Licensed under the MIT License.
 # Code in this file is adapted from pytorch/pytorch
 # https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
@@ -35,12 +33,30 @@ class BVCC(Dataset):
 
     _BVCC_URL = ("https://zenodo.org/records/6572573/files/main.tar.gz", "fc880c2a208c3285a47bd9a64f34eb11")
     _BC_URL = [
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2008_release_version_1.tar.bz2", "5360686aac07ffe22420ffd00c90ea74"),
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2009_release_version_1.tar.bz2", "1ffdf2c0ddb5f2e0c97908a70d0302b2"),
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2010_release_version_1.tar.bz2", "e60d504c4e3a95d7792e6fd056e74aec"),
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2011_release_version_1.tar.bz2", "8e59a48f88568f86d1962644fdd568c5"),
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2013_release_version_2.tar.bz2", "837e20399409393332322fdd59d114de"),
-        ("https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2016_release_version_1.tar.bz2", "fff9d42a97161835f2545e02e5392e06"),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2008_release_version_1.tar.bz2",
+            "5360686aac07ffe22420ffd00c90ea74",
+        ),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2009_release_version_1.tar.bz2",
+            "1ffdf2c0ddb5f2e0c97908a70d0302b2",
+        ),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2010_release_version_1.tar.bz2",
+            "e60d504c4e3a95d7792e6fd056e74aec",
+        ),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2011_release_version_1.tar.bz2",
+            "8e59a48f88568f86d1962644fdd568c5",
+        ),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2013_release_version_2.tar.bz2",
+            "837e20399409393332322fdd59d114de",
+        ),
+        (
+            "https://data.cstr.ed.ac.uk/blizzard/wavs_and_scores/blizzard_wavs_and_scores_2016_release_version_1.tar.bz2",
+            "fff9d42a97161835f2545e02e5392e06",
+        ),
     ]
     _LABEL_URL = ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/bvcc/meta.zip", "a2054d0e14b36e5e8692600007244528")
 

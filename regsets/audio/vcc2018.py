@@ -1,5 +1,3 @@
-# Copyright (c) 2024 Pin-Yen Huang.
-# Licensed under the MIT License.
 # Code in this file is adapted from pytorch/pytorch
 # https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
@@ -30,7 +28,10 @@ class VCC2018(Dataset):
     """
 
     _URL_MD5 = {
-        "data": ("https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_submitted_systems_converted_speech.tar.gz", "75b0f937240f6850a56ec2cbad34b4ad"),
+        "data": (
+            "https://datashare.ed.ac.uk/bitstream/handle/10283/3061/vcc2018_submitted_systems_converted_speech.tar.gz",
+            "75b0f937240f6850a56ec2cbad34b4ad",
+        ),
         "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/vcc2018/meta.zip", "66ea41b35ffbc1ad6565e538320f011d"),
     }
 

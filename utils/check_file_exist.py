@@ -1,6 +1,3 @@
-# Copyright (c) 2024 Pin-Yen Huang.
-# Licensed under the MIT License.
-
 import pandas as pd
 from tqdm import tqdm
 from pathlib import Path
