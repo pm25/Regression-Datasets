@@ -60,8 +60,9 @@ class IXI_TINY:
         with NamedTemporaryFile(suffix=".zip", delete=True) as f:
             download_and_extract_archive(self._DATA_URL, download_root=self._base_folder, filename=f.name, md5=self._DATA_MD5)
             images_folder = self._base_folder / "ixi_tiny" / "image"
-            if images_folder.is_dir():
-                images_folder.rename(self._images_folder)
+            if self._images_folder.exists():
+                shutil.rmtree(self._images_folder)
+            images_folder.rename(self._images_folder)
             extracted_folder = self._base_folder / "ixi_tiny"
             if extracted_folder.exists():
                 shutil.rmtree(extracted_folder)

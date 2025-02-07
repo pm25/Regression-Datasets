@@ -10,7 +10,7 @@ from tempfile import NamedTemporaryFile
 from typing import Any, Callable, Optional, Tuple
 
 import torchio as tio
-from torchio.download import download_and_extract_archive, download_url
+from torchio.download import download_and_extract_archive
 
 from torch.utils.data import Dataset
 from torchvision.datasets.utils import verify_str_arg
@@ -103,9 +103,10 @@ class IXI_TINY(Dataset):
         with NamedTemporaryFile(suffix=".zip", delete=True) as f:
             download_and_extract_archive(self._DATA_URL, download_root=self._base_folder, filename=f.name, md5=self._DATA_MD5)
             images_folder = self._base_folder / "ixi_tiny" / "image"
-            if images_folder.is_dir():
-                images_folder.rename(self._images_folder)
+            if self._images_folder.exists():
+                shutil.rmtree(self._images_folder)
+            images_folder.rename(self._images_folder)
             extracted_folder = self._base_folder / "ixi_tiny"
             if extracted_folder.exists():
                 shutil.rmtree(extracted_folder)
-        download_url(self._LABEL_URL, root=self._base_folder, md5=self._LABEL_MD5)
+        download_and_extract_archive(self._LABEL_URL, download_root=self._base_folder, md5=self._LABEL_MD5)

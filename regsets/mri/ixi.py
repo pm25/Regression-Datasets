@@ -9,7 +9,7 @@ from tempfile import NamedTemporaryFile
 from typing import Any, Callable, Optional, Tuple
 
 import torchio as tio
-from torchio.download import download_and_extract_archive, download_url
+from torchio.download import download_and_extract_archive
 
 from torch.utils.data import Dataset
 from torchvision.datasets.utils import verify_str_arg
@@ -110,4 +110,4 @@ class IXI(Dataset):
             download_and_extract_archive(
                 self._DATA_URL, download_root=self._base_folder, filename=f.name, extract_root=self._images_folder, md5=self._DATA_MD5
             )
-        download_url(self._LABEL_URL, root=self._base_folder, md5=self._LABEL_MD5)
+        download_and_extract_archive(self._LABEL_URL, download_root=self._base_folder, md5=self._LABEL_MD5)
