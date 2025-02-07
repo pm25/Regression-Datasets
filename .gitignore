@@ -161,14 +161,62 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-*
-!README.md
-!requirements.txt
-!pyproject.toml
-!.gitignore
-!utils/*
-!regsets/*/*.py
-!data/*/meta/*
-!data/*/meta.zip
-!data/*/process_meta.py
-!data/*/apply_aug.py
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+*.svg
+
+# Audio
+*.wav
+*.mp3
+*.aac
+*.ogg
+*.flac
+*.m4a
+
+# Video
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.flv
+*.webm
+
+# Archives & Compressed Files
+*.zip
+*.tar
+*.gz
+*.bz2
+*.xz
+*.rar
+*.7z
+
+# Data Files
+*.json
+*.xml
+*.yaml
+*.yml
+*.tsv
+*.db
+*.sqlite
+*.log
+
+# Executables & Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.bin
+*.out
+*.class
+
+# Misc
+.DS_Store
+Thumbs.db
