@@ -40,6 +40,7 @@ class UTKFace:
         return self._images_folder.exists() and self._images_folder.is_dir()
 
     def _download(self) -> None:
+        """Download the dataset if it does not exist already."""
         if self._check_exists():
             return
         download_and_extract_archive(self._URL, download_root=self._base_folder, md5=self._MD5)

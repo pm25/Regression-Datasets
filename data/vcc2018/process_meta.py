@@ -43,6 +43,7 @@ class VCC2018:
         return self._audio_folder.exists() and self._audio_folder.is_dir()
 
     def _download(self) -> None:
+        """Download the dataset if it does not exist already."""
         if self._check_exists():
             return
         download_and_extract_archive(self._LABEL_URL, download_root=self._base_folder, md5=self._LABEL_MD5)

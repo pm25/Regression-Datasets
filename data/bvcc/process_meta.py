@@ -69,6 +69,7 @@ class BVCC:
         return self._audio_folder.exists() and self._audio_folder.is_dir()
 
     def _download(self) -> None:
+        """Download the dataset if it does not exist already."""
         if self._check_exists():
             return
         for path in self._base_folder.glob("**/*"):
