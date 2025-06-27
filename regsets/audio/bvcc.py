@@ -6,9 +6,9 @@ import shutil
 import librosa
 import numpy as np
 import pandas as pd
-from tqdm import tqdm
 from hashlib import md5
 from pathlib import Path
+from tqdm.auto import tqdm
 from typing import Any, Tuple
 
 from torch.utils.data import Dataset

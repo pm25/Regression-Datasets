@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 from PIL import Image
-from tqdm import tqdm
 from pathlib import Path
+from tqdm.auto import tqdm
 
 
 if __name__ == "__main__":
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     train_df.rel_path = train_df.rel_path.apply(lambda x: dataset_dir / x)
 
     imgs = []
-    for path in tqdm(train_df.rel_path.tolist()):
+    for path in tqdm(train_df.rel_path.tolist(), dynamic_ncols=True):
         img = Image.open(path).convert("RGB")
         img = np.asarray(img)
         imgs.append(img)

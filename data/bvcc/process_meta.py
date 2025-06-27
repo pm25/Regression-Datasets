@@ -4,9 +4,9 @@
 import os
 import shutil
 import pandas as pd
-from tqdm import tqdm
 from hashlib import md5
 from pathlib import Path
+from tqdm.auto import tqdm
 
 from torchvision.datasets.utils import download_and_extract_archive
 
