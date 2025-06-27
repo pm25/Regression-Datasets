@@ -17,8 +17,11 @@ class DSprites(VisionDataset):
     """`dSprites Dataset <https://github.com/google-deepmind/dsprites-dataset>`
 
     dSprites is a dataset of 2D shapes procedurally generated from independent latent factors.
-    Each image is 64x64 and contains a single shape (square, ellipse, or heart). This dataset
-    filters for only heart shapes and uses the orientation as the label.
+    Each image is 64x64 and contains a single shape (square, ellipse, or heart).
+
+    This class filters the dataset to include only heart shapes (shape index 3), and uses
+    the orientation value as the label. Samples where the orientation is exactly 2π are
+    excluded, since 2π is equivalent to 0 in the circular space.
 
     Args:
         root (string): Root directory of the dataset.
@@ -35,7 +38,7 @@ class DSprites(VisionDataset):
         "https://raw.githubusercontent.com/google-deepmind/dsprites-dataset/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz",
         "7da33b31b13a06f4b04a70402ce90c2e",
     )
-    _META_URL_MD5 = ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/dsprites/meta.zip", "8a09fde908684787970490cc769ead29")
+    _META_URL_MD5 = ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/dsprites/meta.zip", "ddea3957fcda24fbe6c4a4a5dde8290d")
 
     def __init__(
         self,

@@ -84,7 +84,9 @@ class DSprites:
             )
 
         self._meta_folder.mkdir(parents=True, exist_ok=True)
-        pd.DataFrame(records).to_csv(self._meta_folder / "raw_meta.csv", index=False)
+        records_df = pd.DataFrame(records)
+        records_df = records_df[~np.isclose(records_df["orientation"], 2 * np.pi)]
+        records_df.to_csv(self._meta_folder / "raw_meta.csv", index=False)
 
     def _process_and_save_meta(self) -> None:
         raw_meta_df = pd.read_csv(self._meta_folder / "raw_meta.csv")
