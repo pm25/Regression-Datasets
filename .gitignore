@@ -195,6 +195,7 @@ cython_debug/
 *.xz
 *.rar
 *.7z
+*.npz
 
 # Data Files
 *.json
@@ -220,3 +221,5 @@ cython_debug/
 # Misc
 .DS_Store
 Thumbs.db
+
+!meta.zip
