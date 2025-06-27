@@ -9,7 +9,7 @@ from typing import Any, Callable, Optional, Tuple
 
 import PIL.Image
 
-from torchvision.datasets.utils import download_url, verify_str_arg
+from torchvision.datasets.utils import download_url, download_and_extract_archive, verify_str_arg
 from torchvision.datasets.vision import VisionDataset
 
 
@@ -31,13 +31,11 @@ class DSprites(VisionDataset):
             downloaded again. Default is False.
     """
 
-    _URL_MD5 = {
-        "data": (
-            "https://raw.githubusercontent.com/google-deepmind/dsprites-dataset/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz",
-            "7da33b31b13a06f4b04a70402ce90c2e",
-        ),
-        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/dsprites/meta.zip", "8a09fde908684787970490cc769ead29"),
-    }
+    _DATA_URL_MD5 = (
+        "https://raw.githubusercontent.com/google-deepmind/dsprites-dataset/master/dsprites_ndarray_co1sh3sc6or40x32y32_64x64.npz",
+        "7da33b31b13a06f4b04a70402ce90c2e",
+    )
+    _META_URL_MD5 = ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/dsprites/meta.zip", "8a09fde908684787970490cc769ead29")
 
     def __init__(
         self,
@@ -52,7 +50,7 @@ class DSprites(VisionDataset):
         self._base_folder = Path(self.root) / "dsprites"
         self._meta_folder = self._base_folder / "meta"
         self._images_folder = self._base_folder / "images"
-        self._data_file = self._base_folder / Path(self._URL_MD5["data"][0]).name
+        self._data_file = self._base_folder / Path(self._DATA_URL_MD5[0]).name
 
         if download:
             self._download()
@@ -88,8 +86,8 @@ class DSprites(VisionDataset):
     def _download(self) -> None:
         if self._check_exists():
             return
-        for url, md5 in self._URL_MD5.values():
-            download_url(url, root=self._base_folder, md5=md5)
+        download_url(self._DATA_URL_MD5[0], root=self._base_folder, md5=self._DATA_URL_MD5[1])
+        download_and_extract_archive(self._META_URL_MD5[0], download_root=self._base_folder, md5=self._META_URL_MD5[1])
         self._extract_heart_images()
 
     def _extract_heart_images(self) -> None:
