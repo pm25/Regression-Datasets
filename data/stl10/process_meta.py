@@ -104,7 +104,7 @@ class STL10:
 
         metadata: List[dict] = []
 
-        for idx, image_np in tqdm(enumerate(images), total=len(images), desc="Processing images"):
+        for idx, image_np in tqdm(enumerate(images), total=len(images), desc="Processing images", dynamic_ncols=True):
             pil_image = Image.fromarray(np.transpose(image_np, (1, 2, 0)))  # (3, 96, 96) → (96, 96, 3)
             blurred_image, edge_density, sigma = self._blurred_and_calc_edge_density(pil_image, idx)
             filename = f"{idx:04d}.png"

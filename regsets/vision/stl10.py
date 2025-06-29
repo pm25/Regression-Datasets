@@ -30,7 +30,7 @@ class STL10(VisionDataset):
 
     _URL_MD5 = [
         ("http://ai.stanford.edu/~acoates/stl10/stl10_binary.tar.gz", "91f7769df0f17e558f3565bffb0c7dfb"),
-        ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/stl10/meta.zip", "2d95f2f383c2c17650c15d86617fedfa"),
+        ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/stl10/meta.zip", "5c5b39ba88cbde780bfc6a0e5faee3c1"),
     ]
 
     def __init__(
@@ -131,7 +131,7 @@ class STL10(VisionDataset):
         self._images_folder.mkdir(parents=True, exist_ok=True)
         images = self._load_images()
 
-        for idx, image_np in tqdm(enumerate(images), total=len(images), desc="Saving blurred images"):
+        for idx, image_np in tqdm(enumerate(images), total=len(images), desc="Saving blurred images", dynamic_ncols=True):
             image = Image.fromarray(np.transpose(image_np, (1, 2, 0)))  # to HWC
             blurred_image = self._blur_and_return_image(image, idx)
             filename = f"{idx:04d}.png"
