@@ -114,11 +114,14 @@ class STL10:
         raw_meta_df = pd.DataFrame(metadata).astype({"label": np.float32})
         meta_df = raw_meta_df[["file_name", "label"]]
 
-        train_df = meta_df.sample(frac=0.6, random_state=222)
-        test_df = meta_df.drop(train_df.index)
+        train_df = meta_df.sample(n=2000, replace=False, random_state=222)
+        meta_df = meta_df.drop(train_df.index)
+        val_df = meta_df.sample(n=1000, replace=False, random_state=222)
+        test_df = meta_df.drop(val_df.index)
 
         raw_meta_df.to_csv(self._meta_folder / "raw_meta.csv", index=False)
         train_df.to_csv(self._meta_folder / "train.csv", index=False)
+        val_df.to_csv(self._meta_folder / "val.csv", index=False)
         test_df.to_csv(self._meta_folder / "test.csv", index=False)
 
 

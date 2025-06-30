@@ -30,7 +30,7 @@ class STL10(VisionDataset):
 
     _URL_MD5 = [
         ("http://ai.stanford.edu/~acoates/stl10/stl10_binary.tar.gz", "91f7769df0f17e558f3565bffb0c7dfb"),
-        ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/stl10/meta.zip", "5c5b39ba88cbde780bfc6a0e5faee3c1"),
+        ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/stl10/meta.zip", "6eca5c67500a75892bbdfe7c6cb14e60"),
     ]
 
     def __init__(
@@ -42,7 +42,7 @@ class STL10(VisionDataset):
         download: bool = False,
     ) -> None:
         super().__init__(root, transform=transform, target_transform=target_transform)
-        self._split = verify_str_arg(split, "split", ("train", "test"))
+        self._split = verify_str_arg(split, "split", ("train", "val", "test"))
 
         self._base_folder = Path(self.root) / "stl10"
         self._meta_folder = self._base_folder / "meta"
