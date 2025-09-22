@@ -30,7 +30,7 @@ class VCC_NOISE(Dataset):
 
     _URL_MD5 = {
         "data": ("https://zenodo.org/records/10691660/files/main.tar.gz", "ba4b896801282ca0eae37b9fd81ed94c"),
-        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/vcc_noise/meta.zip", "889d4bd22c706fdd4bcc8a67b0808172"),
+        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/vcc_noise/meta.zip", "e1c363c030727c1252db7d88aaac9396"),
     }
 
     def __init__(
@@ -42,7 +42,7 @@ class VCC_NOISE(Dataset):
         seed: int = 22,  # random seed for deterministic sampling
     ) -> None:
         super().__init__()
-        self._split = verify_str_arg(split, "split", ("train", "val", "test"))
+        self._split = verify_str_arg(split, "split", ("train", "eval", "test"))
         self._base_folder = Path(root) / "vcc_noise"
         self._meta_folder = self._base_folder / "meta"
         self._audio_folder = self._base_folder / "audios"
