@@ -29,8 +29,8 @@ class VCC_NOISE(Dataset):
     """
 
     _URL_MD5 = {
-        "data": ("https://zenodo.org/records/10691660/files/main.tar.gz", "fc880c2a208c3285a47bd9a64f34eb11"),
-        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/vcc_noise/meta.zip", "5390f9358deb14c3e6b3a44939c22bd9"),
+        "data": ("https://zenodo.org/records/10691660/files/main.tar.gz", "ba4b896801282ca0eae37b9fd81ed94c"),
+        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/vcc_noise/meta.zip", "889d4bd22c706fdd4bcc8a67b0808172"),
     }
 
     def __init__(

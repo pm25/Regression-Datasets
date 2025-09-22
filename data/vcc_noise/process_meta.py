@@ -18,7 +18,7 @@ class VCC_NOISE:
             downloaded again. Default is False.
     """
 
-    _BVCC_URL = ("https://zenodo.org/records/10691660/files/main.tar.gz", "fc880c2a208c3285a47bd9a64f34eb11")
+    _BVCC_URL = ("https://zenodo.org/records/10691660/files/main.tar.gz", "ba4b896801282ca0eae37b9fd81ed94c")
 
     def __init__(
         self,
@@ -66,6 +66,7 @@ class VCC_NOISE:
         max_scores = grouped["score"].map(len).max()
         scores_expanded = pd.DataFrame(grouped["score"].to_list(), columns=[f"score_{i+1}" for i in range(max_scores)])
         meta_df = pd.concat([grouped["file_name"], scores_expanded], axis=1)
+        meta_df = meta_df[meta_df["file_name"].apply(lambda x: (self._audio_folder / x).is_file())].reset_index(drop=True)
 
         meta_df["avg_score"] = scores_expanded.mean(axis=1)
         meta_df["avg_score"] = meta_df["avg_score"].astype(float)
