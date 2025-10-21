@@ -33,7 +33,7 @@ class UTKFace(VisionDataset):
 
     _URL_MD5 = {
         "data": ("https://huggingface.co/datasets/py97/UTKFace-Cropped/resolve/main/UTKFace.tar.gz", "ae1a16905fbd795db921ff1d940df9cc"),
-        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/utkface/meta.zip", "0983459bcfddbd93d6abdb821ae176c4"),
+        "meta": ("https://github.com/pm25/regression-datasets/raw/refs/heads/main/data/utkface/meta.zip", "83a6b7e71ff6648ff71d58afd6dc84b3"),
     }
 
     def __init__(
@@ -45,7 +45,7 @@ class UTKFace(VisionDataset):
         download: bool = False,
     ) -> None:
         super().__init__(root, transform=transform, target_transform=target_transform)
-        self._split = verify_str_arg(split, "split", ("train", "test"))
+        self._split = verify_str_arg(split, "split", ("train", "val", "test", "valtest"))
         self._base_folder = Path(self.root) / "utkface"
         self._meta_folder = self._base_folder / "meta"
         self._images_folder = self._base_folder / "UTKFace"

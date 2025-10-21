@@ -64,12 +64,19 @@ class UTKFace:
         meta_df.file_name = meta_df.file_name.apply(lambda x: Path(x).name)
         meta_df = meta_df.sort_values(by=["file_name"])
         meta_df.label = meta_df.label.astype(float)
-        train_df = meta_df.sample(frac=0.8, random_state=222)
-        test_df = meta_df.drop(train_df.index)
 
+        # === split ===
+        train_df = meta_df.sample(frac=0.8, random_state=222)
+        valtest_df = meta_df.drop(train_df.index)
+        val_df = valtest_df.sample(frac=0.5, random_state=222)
+        test_df = valtest_df.drop(val_df.index)
+
+        # === save ===
         self._meta_folder.mkdir(parents=True, exist_ok=True)
         raw_meta_df.to_csv(self._meta_folder / "raw_meta.csv", index=False)
         train_df.to_csv(self._meta_folder / "train.csv", index=False)
+        valtest_df.to_csv(self._meta_folder / "valtest.csv", index=False)
+        val_df.to_csv(self._meta_folder / "val.csv", index=False)
         test_df.to_csv(self._meta_folder / "test.csv", index=False)
 
 
