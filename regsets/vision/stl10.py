@@ -114,11 +114,13 @@ class STL10(VisionDataset):
                 "OpenCV (cv2) is required to blur images in STL10. "
                 "Install it via `pip install opencv-python`."
             ) from e
+        
         rng = np.random.default_rng(seed=idx)
         sigma = np.clip(rng.normal(loc=sigma_mean, scale=sigma_std), 0.01, 4.0)
         sigma = np.round(sigma, 2)
         image_np = np.array(image)
         blurred_np = cv2.GaussianBlur(image_np, ksize=(0, 0), sigmaX=sigma)
+        
         return Image.fromarray(blurred_np)
 
     def _load_images(self) -> np.ndarray:

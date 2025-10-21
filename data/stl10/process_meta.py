@@ -1,7 +1,6 @@
 # Code adapted from pytorch/vision
 # https://github.com/pytorch/vision/blob/main/torchvision/datasets/food101.py
 
-import cv2
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -68,6 +67,14 @@ class STL10:
         Returns:
             Tuple: (blurred_image, edge_density, sigma)
         """
+        try:
+            import cv2
+        except ImportError as e:
+            raise ImportError(
+                "OpenCV (cv2) is required to blur images in STL10. "
+                "Install it via `pip install opencv-python`."
+            ) from e
+        
         rng = np.random.default_rng(seed=idx)
         sigma = np.clip(rng.normal(loc=sigma_mean, scale=sigma_std), 0.01, 4.0)
         sigma = np.round(sigma, 2)
