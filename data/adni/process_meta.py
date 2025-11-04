@@ -112,8 +112,8 @@ class ADNI:
         if self._check_exists():
             return
         raise RuntimeError(
-            "ADNI is not publicly downloadable. "
-            f"Please download the files ({self._data_files}) manually and place them in {self._base_folder}."
+            f"ADNI is not publicly downloadable. Please manually download: {self._data_files}\n"
+            f"and place them under: {self._base_folder}"
         )
 
     def _extract(self) -> None:
